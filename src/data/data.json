@@ -1,0 +1,20 @@
+{
+    "Movies": 
+    {
+        "easy_words": ["Spiderman","Avengers","Narnia"],
+        "med_words": [],
+        "hard_words": []
+    },
+    "Songs":
+    {
+        "easy_words": ["22","Long Live","All Too Well"],
+        "med_words": [],
+        "hard_words": []
+    },
+    "Places": 
+    {
+        "easy_words": [],
+        "med_words": [],
+        "hard_words": []
+    }
+}
