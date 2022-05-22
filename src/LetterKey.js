@@ -1,45 +1,40 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
-// using classes
-class LetterKey extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            isPressed: false,
-            letter: props.letter
-        };
-        this.handleClick = this.handleClick.bind(this);
-    }
+function LetterKey ({letter, selectedLetter, word, correctLetters, setCorrectLetters, wrongLetters, setWrongLetters}) {
+    const [classList, setClass] = useState("letterKey mt-2");
 
-    handleClick() {
-        this.setState({isPressed: true});
-        console.log(this.state.letter);
-    }
+    useEffect(() => {
+        setClass("letterKey mt-2")
+    }, [word]);
 
-    render () {
-        return (
-            <div className='col-2'>
-                <div className={(this.state.isPressed ? 'scale-down-center letterKey': 'letterKey') + ' mt-2'}  onClick={this.handleClick} style={this.state.isPressed ? {backgroundColor: "dimgray"} : {backgroundColor: "lightgray"}}>
-                    <div>{this.state.letter}</div>
-                </div>
+    useEffect(() => {
+        if (letter == selectedLetter) handleClick();
+    }, [selectedLetter]);
+
+    const handleClick = () => {
+        console.log(word);
+        console.log(letter);
+
+        if (word.includes(letter)) {
+            setClass(currentClasses => currentClasses + " letterKey_down_correct scale-down-center");
+            if (!correctLetters.includes(letter)) {
+                setCorrectLetters(currentLetters => [...currentLetters, letter]);
+            }
+        } else {
+            setClass(currentClasses => currentClasses + " letterKey_down_wrong scale-down-center");
+            if (!wrongLetters.includes(letter)) {
+                setWrongLetters(currentLetters => [...currentLetters, letter]);
+            }
+        }
+    };
+
+    return (
+        <div className='col-2'>
+            <div id={"letter_"+letter} className={classList} onClick={handleClick}>
+                <div>{letter}</div>
             </div>
-        );
-    }
-  }
-
-//// using functional components and hooks
-// function LetterKey(props) {
-//     const [isPressed, setPressed] = useState(false);
-
-//     return (
-//         <div className='col-1'>
-//             <div className='letterKey' onClick={() => setPressed(true)} style={isPressed ? {backgroundColor: "dimgray"} : {backgroundColor: "black"}}>
-//             {/* <div className={isPressed ? 'scale-down-center letterKey': 'letterKey'}  onClick={() => setPressed(true)} style={isPressed ? {backgroundColor: "dimgray"} : {backgroundColor: "black"}}> */}
-//                 <h2>{props.letter}</h2>
-//                 {/* <p>{"" + isPressed}</p> */}
-//             </div>
-//         </div>
-//     );
-// }
+        </div>
+    );
+}
   
-  export default LetterKey;
+export default LetterKey;

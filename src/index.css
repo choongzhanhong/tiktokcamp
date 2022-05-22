@@ -13,7 +13,7 @@ code {
 }
 
 .letterKey {
-  background-color: beige;
+  background-color: lightgray;
   border-radius: 10%;
   /* height: 0;
   width: 100%;
@@ -25,6 +25,16 @@ code {
   align-items: center;
   justify-content: center;
 }
+
+.letterKey_down_correct {
+  background-color: green;
+}
+
+.letterKey_down_wrong {
+  background-color: dimgray;
+}
+
+
 
 .scale-down-center {
 	-webkit-animation: scale-down-center 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;

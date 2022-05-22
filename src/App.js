@@ -4,47 +4,71 @@ import './App.css';
 import LetterKey from './LetterKey';
 import Button from './Elements';
 
-import word_data from './data/data.json'
-
 function App() {
-	const alphabet = Array.from(Array(26)).map((e, i) => i + 65).map((x) => String.fromCharCode(x));
-	const [isPlay, setPlay] = useState(false);
+  const alphabet = Array.from(Array(26)).map((e, i) => i + 65).map((x) => String.fromCharCode(x));
+	const [isPlay, setPlay] = useState(true);
 	const [correctLetters, setCorrectLetters] = useState([]);
 	const [wrongLetters, setWrongLetters] = useState([]);
-	const [word, setWord] = useState('');
+	const [randWord, setWord] = useState('');
+	const [selectedLetter, setLetter] = useState('');
 
-  var level = "easy_words";
-  var category = "Movies";
+  // Fetch random word from API
+  useEffect(() => {
+    const API_URL = "https://random-word-api.herokuapp.com/word";
+    let ignore = false;
 
-  const wordsArray = [...word_data[category][level]]
-  var randWord = wordsArray[Math.floor(Math.random()*wordsArray.length)];
+    fetch(API_URL)
+    .then((response) => {
+      return response.json();
+    })
+    .then((data) => {
+      if (!ignore) {
+        setWord(data[0].toUpperCase())
+        setCorrectLetters([]);
+        setWrongLetters([]);
+        setLetter([]);
+        console.log(randWord);
+      }
+    });
+
+    return () => { ignore = true }
+  }, []);
+  
+  useEffect(() => {
+    const handleKeydown = event => {
+      const { key, keyCode } = event;
+      const letter = key.toUpperCase();
+      setLetter(letter);
+    }
+    window.addEventListener('keydown', handleKeydown);
+
+    return () => window.removeEventListener('keydown', handleKeydown);
+  }, [isPlay, correctLetters, wrongLetters]);
 
 	return (
-		<div className="App">
-      <head>
+    <>
       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" 
         integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" 
-        crossorigin="anonymous" />
-      </head>
+        crossOrigin="anonymous" />
 
-      <div>
-        random word: {randWord}
-      </div>
-      <div className='row'>
-        <div className='col-2'></div>
-        <div className='col-8'>
-          {/* <div className='row'>
-            <Button content="Play" />
-          </div> */}
-          <div className='row'>
-            {alphabet.map(letter => (
-            <LetterKey letter={letter} key={letter.id} />
-            ))}
+      <div className="App">
+        random word: {randWord}<br></br>
+        correct letters: {correctLetters}<br></br>
+        wrong letters: {wrongLetters}
+        <div className='row'>
+          <div className='col-1'></div>
+          <div className='col-10'>
+            <div className='row'>
+              {alphabet.map(letter => (
+                <LetterKey key={letter.id} letter={letter} selectedLetter={selectedLetter} word={randWord} correctLetters={correctLetters} setCorrectLetters={setCorrectLetters} wrongLetters={wrongLetters} setWrongLetters={setWrongLetters}/>
+              ))}
+            </div>
           </div>
+          <div className='col-1'></div>
         </div>
-        <div className='col-2'></div>
       </div>
-		</div>
+    </>
+
 	);
 }
 
