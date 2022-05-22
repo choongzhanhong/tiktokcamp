@@ -12,7 +12,6 @@ function LetterKey ({letter, selectedLetter, word, correctLetters, setCorrectLet
     }, [selectedLetter]);
 
     const handleClick = () => {
-        console.log(word);
         console.log(letter);
 
         if (word.includes(letter)) {
@@ -30,7 +29,7 @@ function LetterKey ({letter, selectedLetter, word, correctLetters, setCorrectLet
 
     return (
         <div className='col-2'>
-            <div id={"letter_"+letter} className={classList} onClick={handleClick}>
+            <div id={"letter_"+letter} className={"button " + classList} onClick={handleClick}>
                 <div>{letter}</div>
             </div>
         </div>
