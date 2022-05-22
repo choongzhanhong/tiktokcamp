@@ -28,10 +28,8 @@ function LetterKey ({letter, selectedLetter, word, correctLetters, setCorrectLet
     };
 
     return (
-        <div className='col-2'>
-            <div id={"letter_"+letter} className={"button " + classList} onClick={handleClick}>
-                <div>{letter}</div>
-            </div>
+        <div id={"letter_"+letter} className={"button " + classList} onClick={handleClick}>
+            <div>{letter}</div>
         </div>
     );
 }

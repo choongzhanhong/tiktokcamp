@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 
-const Button = ({content, handleClick}) => {
+const Button = ({content, handleClick, title}) => {
     return (
-        <div className='button' onClick={handleClick}>
+        <div className='button' onClick={handleClick} title={title}>
             {content}
         </div>
     );
