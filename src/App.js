@@ -6,6 +6,10 @@ import Hangman from './components/Hangman';
 import LetterKey from './components/LetterKey';
 import Word from './components/Word';
 import { checkWin } from './helpers';
+import GameOver from "./components/GameOver";
+
+
+
 
 function App() {
 	const alphabet = Array.from(Array(26)).map((e, i) => i + 65).map((x) => String.fromCharCode(x));
@@ -19,6 +23,7 @@ function App() {
 	const [selectedLetter, setSelectedLetter] = useState('');
 	const [remainingHints, setNumHints] = useState(MAX_HINTS);
 	const [gameStatus, setStatus] = useState('');
+	const [gameOver, setGameOver] = useState(false); //Set to true if game over.
 
 	// Function to fetch random word from API
 	const newGame = () => {
@@ -82,11 +87,17 @@ function App() {
 		if (gameStatus != "") {
 			setPlay(false);
 		}
+		if (gameStatus == "lose") {
+			setGameOver(true);
+		}
 	}, [gameStatus]);
 
 	return (
 		<div className="App">
 			<div className='container gameScreen'>
+				{/*GAME OVER MODAL*/}
+				<GameOver gameOver={gameOver}/>
+
 				<div className='gameElement_row align-self-center'>
 					{/* HANGMAN FIGURE*/}
 					<div className='align-self-center'>
@@ -96,9 +107,10 @@ function App() {
 						correct letters: {correctLetters}<br></br>
 						wrong letters: {wrongLetters}<br></br>
 						game status: {gameStatus}<br></br>
-						can we play? {isPlay ? "yes" : "no"}
+						can we play? {isPlay ? "yes" : "no"}<br/>
+						gameover? {gameOver? "yes":"no"}
 					</div>
-	
+
 					{/* KEYBOARD & BUTTONS*/}
 					<div className='align-self-center'>
 						<Word word={randWord} correctLetters={correctLetters}></Word>
