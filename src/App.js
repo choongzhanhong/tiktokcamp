@@ -96,7 +96,7 @@ function App() {
 		<div className="App">
 			<div className='container gameScreen'>
 				{/*GAME OVER MODAL*/}
-				<GameOver gameOver={gameOver}/>
+				<GameOver gameOver={gameOver} newGame={newGame} setGameOver={setGameOver} />
 
 				<div className='gameElement_row align-self-center'>
 					{/* HANGMAN FIGURE*/}
