@@ -43,6 +43,7 @@ function App() {
 			setSelectedLetter([]);
 			setNumHints(MAX_HINTS);
 			setStatus('');
+			setGameOver(false);
 		}
 		});
 
@@ -94,9 +95,9 @@ function App() {
 
 	return (
 		<div className="App">
-			<div className='container gameScreen'>
+			<div className='fullScreen gameScreen'>
 				{/*GAME OVER MODAL*/}
-				<GameOver gameOver={gameOver}/>
+				<GameOver gameOver={gameOver} giveHint={giveHint} newGame={newGame} />
 
 				<div className='gameElement_row align-self-center'>
 					{/* HANGMAN FIGURE*/}

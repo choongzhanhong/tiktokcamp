@@ -2,7 +2,7 @@ import React from 'react';
 
 function Word ({word, correctLetters}) {
     return (
-        <div className='word'>
+        <div className='word mb-3'>
             {word.split('').map((letter, i) => {
                 return (
                     <span className='letter' key={i}>
