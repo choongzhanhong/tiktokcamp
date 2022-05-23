@@ -86,7 +86,7 @@ function App() {
 
 	return (
 		<div className="App">
-			<div className='container gameScreen'>
+			<div className='fullScreen gameScreen'>
 				<div className='gameElement_row align-self-center'>
 					{/* HANGMAN FIGURE*/}
 					<div className='align-self-center'>
