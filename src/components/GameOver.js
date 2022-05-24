@@ -8,11 +8,11 @@ const GameOver = ({gameOver, word, goHome, newGame}) => {
             <h1>Game Over!</h1>
             <p>The word is {word}! Wanna try again?</p>
             <div className='d-flex mt-3'>
-                <div className="mr-auto p-2">
-                    <Button icon={<i className="fa-solid fa-house"></i>} content={"Home"} handleClick={goHome} title="Home"></Button>
+                <div className="mr-auto p-1">
+                    <Button icon={<i className="fa-solid fa-house"></i>} content={"Go Home"} handleClick={goHome} title="Home"></Button>
                 </div>
-                <div className='p-2'>
-                    <Button icon={<i class="fa-solid fa-rotate-left"></i>} content={"Restart"} handleClick={newGame} title="Restart"></Button>
+                <div className='p-1'>
+                    <Button icon={<i class="fa-solid fa-rotate-left"></i>} content={"Play Again"} handleClick={newGame} title="Play Again"></Button>
                 </div>
             </div>
         </ReactModal>

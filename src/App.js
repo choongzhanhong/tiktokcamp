@@ -10,6 +10,7 @@ import GameOver from "./components/GameOver";
 import KeyboardToggle from './components/KeyboardToggle';
 
 import { checkWin } from './helpers';
+import Aboutus from './components/AboutUs';
 
 function App() {
 	const alphabet = Array.from(Array(26)).map((e, i) => i + 65).map((x) => String.fromCharCode(x));
@@ -106,6 +107,10 @@ function App() {
 
 	return (
 		<div className="App">
+			<div className='fullScreen'>
+				<Aboutus />
+			</div>
+			
 			<div className='fullScreen gameScreen'>
 				{/*GAME OVER MODAL*/}
 				<GameOver gameOver={gameOver} word={randWord} goHome={newGame} newGame={newGame} />
@@ -114,20 +119,21 @@ function App() {
 					{/* HANGMAN FIGURE*/}
 					<div className='align-self-center'>
 						<Hangman wrongLetters={wrongLetters} />
-						<br></br>
+						<Word word={randWord} correctLetters={correctLetters}></Word>
+
 						{/* TEMPORARY DISPLAY ITEMS --- remove before submission */}
+						{/* <br></br>
 						keyboardSetting: {keyboardSetting}<br></br>
 						random word: {randWord}<br></br>
 						correct letters: {correctLetters}<br></br>
 						wrong letters: {wrongLetters}<br></br>
 						game status: {gameStatus}<br></br>
 						can we play? {isPlay ? "yes" : "no"}<br/>
-						gameover? {gameOver? "yes":"no"}
+						gameover? {gameOver? "yes":"no"} */}
 					</div>
 
 					{/* KEYBOARD & BUTTONS*/}
 					<div className='align-self-center'>
-						<Word word={randWord} correctLetters={correctLetters}></Word>
 
 						{keyboardSetting === 'qwerty' &&
 							<Keyboard isPlay={isPlay} selectedLetter={selectedLetter} word={randWord} correctLetters={correctLetters} setCorrectLetters={setCorrectLetters} wrongLetters={wrongLetters} setWrongLetters={setWrongLetters}/>
