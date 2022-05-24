@@ -177,6 +177,14 @@ code {
  * ----------------------------------------
  */
 @media (max-width: 480px) {
+  .gameScreen {
+    padding: 1rem;
+  }
+
+  .keyboard_qwerty {
+    grid-template-columns: repeat(auto-fit, minmax(30px, 1fr));
+  }
+
   .letterKey {
     height: 40px;
     width: 40px;

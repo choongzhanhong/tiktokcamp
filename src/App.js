@@ -17,7 +17,7 @@ function App() {
 
 	const [score, setScore] = useState(0);
 	const [isPlay, setPlay] = useState(true); 							// Set to true if game is playable.
-	const [keyboardSetting, setKeyboard] = useState('classic'); 		// Default keyboard setting: 'classic'. Can toggle to 'qwerty'
+	const [keyboardSetting, setKeyboard] = useState('qwerty'); 		// Default keyboard setting: 'qwerty'. Can toggle to 'classic'
 	const [correctLetters, setCorrectLetters] = useState([]);
 	const [wrongLetters, setWrongLetters] = useState([]);
 	const [randWord, setWord] = useState('');
@@ -144,9 +144,6 @@ function App() {
 							<div className="mr-auto p-2">
 								<Button content={<i className="fa-solid fa-house"></i>} handleClick={newGame} title="Home"></Button>
 							</div>
-							<div className="mr-auto p-3">
-								<KeyboardToggle keyboardSetting={keyboardSetting} setKeyboard={setKeyboard} />
-							</div>
 							<div className='p-2'>
 								<div className='row'>
 								<span className='align-self-center'>{remainingHints}/{MAX_HINTS} hints available&nbsp;</span>
@@ -156,6 +153,9 @@ function App() {
 							<div className='p-2'>
 								<Button content={<i className="fa-solid fa-forward"></i>} handleClick={newGame} title="Skip"></Button>
 							</div>
+						</div>
+						<div className="mr-auto p-3">
+							<KeyboardToggle keyboardSetting={keyboardSetting} setKeyboard={setKeyboard} />
 						</div>
 					</div>
 				</div>

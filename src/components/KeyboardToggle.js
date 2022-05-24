@@ -10,8 +10,8 @@ function KeyboardToggle ({keyboardSetting, setKeyboard}) {
 
     return (
         <div className='row'>
+            <div><i class="fa-solid fa-keyboard"></i> QWERTY keyboard&nbsp;</div>
             <ToggleButton value={ keyboardSetting === 'qwerty' || false } onToggle={toggleKeyboard} />
-            <div>&nbsp;QWERTY keyboard</div>
         </div>
     );
 }
