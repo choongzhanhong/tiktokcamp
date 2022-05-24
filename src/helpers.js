@@ -7,7 +7,7 @@ export function checkWin(word, correctLetters, wrongLetters) {
       }
     });
     
-    if(wrongLetters.length == 6) {
+    if(wrongLetters.length === 6) {
         status = 'lose';
     }
   

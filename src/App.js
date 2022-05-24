@@ -5,25 +5,24 @@ import Button from './components/Button';
 import Hangman from './components/Hangman';
 import LetterKey from './components/LetterKey';
 import Word from './components/Word';
-import { checkWin } from './helpers';
 import GameOver from "./components/GameOver";
-
-
-
+import { checkWin } from './helpers';
 
 function App() {
 	const alphabet = Array.from(Array(26)).map((e, i) => i + 65).map((x) => String.fromCharCode(x));
 	const MAX_HINTS = 3;
 
 	const [score, setScore] = useState(0);
-	const [isPlay, setPlay] = useState(true);
+	const [isPlay, setPlay] = useState(true); 							// Set to true if game is playable.
 	const [correctLetters, setCorrectLetters] = useState([]);
 	const [wrongLetters, setWrongLetters] = useState([]);
 	const [randWord, setWord] = useState('');
-	const [selectedLetter, setSelectedLetter] = useState('');
-	const [remainingHints, setNumHints] = useState(MAX_HINTS);
-	const [gameStatus, setStatus] = useState('');
-	const [gameOver, setGameOver] = useState(false); //Set to true if game over.
+	const [selectedLetter, setSelectedLetter] = useState('');			// Set when keyboard key is pressed. 
+	const [remainingHints, setNumHints] = useState(MAX_HINTS);			// Set to the number of hints left available.
+	const [gameStatus, setStatus] = useState('');						// Set to 'win', 'lose' or '' (ongoing) (in helpers.js)
+	const [gameOver, setGameOver] = useState(false);					//Set to true if game over.
+
+	var generateRandomWord = require('random-words'); 					// npm install random-words
 
 	// Function to fetch random word from API
 	const newGame = () => {
@@ -32,7 +31,14 @@ function App() {
 
 		fetch(API_URL)
 		.then((response) => {
-		return response.json();
+			console.log("Response from API received")
+			return response.json();
+		})
+		.catch((err) => {
+			console.log(err);
+			console.log("Generate using npm random-words.")
+			let word = generateRandomWord();
+			return [word];
 		})
 		.then((data) => {
 		if (!ignore) {
@@ -50,7 +56,7 @@ function App() {
 		return () => { ignore = true }
 	}
 
-	// Function to provide a hint letter (letter that appears the least)
+	// Function to provide a hint letter
 	const giveHint = () => {
 		if (remainingHints > 0) {
 			let remainingLetters = randWord.split('').filter(c => !correctLetters.includes(c)).join('');
@@ -60,6 +66,7 @@ function App() {
 		}
 	}
 	
+	// Set up new game (first time)
 	useEffect(() => {
 		newGame();
 	}, []);
@@ -82,13 +89,13 @@ function App() {
 	useEffect(() => {
 		let stat= checkWin(randWord, correctLetters, wrongLetters);
 		setStatus(stat);
-	}, [correctLetters, wrongLetters]);
+	}, [randWord, correctLetters, wrongLetters]);
 
 	useEffect(() => {
-		if (gameStatus != "") {
+		if (gameStatus !== "") {
 			setPlay(false);
 		}
-		if (gameStatus == "lose") {
+		if (gameStatus === "lose") {
 			setGameOver(true);
 		}
 	}, [gameStatus]);
@@ -97,13 +104,14 @@ function App() {
 		<div className="App">
 			<div className='fullScreen gameScreen'>
 				{/*GAME OVER MODAL*/}
-				<GameOver gameOver={gameOver} giveHint={giveHint} newGame={newGame} />
+				<GameOver gameOver={gameOver} word={randWord} goHome={newGame} newGame={newGame} />
 
 				<div className='gameElement_row align-self-center'>
 					{/* HANGMAN FIGURE*/}
 					<div className='align-self-center'>
 						<Hangman wrongLetters={wrongLetters} />
 						<br></br>
+						{/* TEMPORARY DISPLAY ITEMS --- remove before submission */}
 						random word: {randWord}<br></br>
 						correct letters: {correctLetters}<br></br>
 						wrong letters: {wrongLetters}<br></br>
