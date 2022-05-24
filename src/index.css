@@ -177,7 +177,7 @@ code {
  * ----------------------------------------
  */
 @media (max-width: 480px) {
-  .gameScreen {
+  .fullScreen {
     padding: 1em;
   }
 

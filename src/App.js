@@ -107,10 +107,11 @@ function App() {
 
 	return (
 		<div className="App">
-			<div className='fullScreen'>
+			{/* temporary fullScreen */}
+			<div className='fullScreen'> 
 				<Aboutus />
 			</div>
-			
+
 			<div className='fullScreen gameScreen'>
 				{/*GAME OVER MODAL*/}
 				<GameOver gameOver={gameOver} word={randWord} goHome={newGame} newGame={newGame} />
