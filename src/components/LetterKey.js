@@ -24,9 +24,8 @@ function LetterKey ({isPlay, letter, selectedLetter, word, correctLetters, setCo
     }, [word]);
 
     useEffect(() => {
-        if (letter === selectedLetter) handleClick();
-    }, [letter, selectedLetter]);
-
+        if (letter === selectedLetter || correctLetters.includes(letter) || wrongLetters.includes(letter)) handleClick();
+    }, [letter, selectedLetter, correctLetters, wrongLetters]);
 
     return (
         <div id={"letter_"+letter} className={"button " + classList} onClick={handleClick}>

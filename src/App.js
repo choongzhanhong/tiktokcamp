@@ -5,7 +5,10 @@ import Button from './components/Button';
 import Hangman from './components/Hangman';
 import LetterKey from './components/LetterKey';
 import Word from './components/Word';
+import Keyboard from './components/Keyboard';
 import GameOver from "./components/GameOver";
+import KeyboardToggle from './components/KeyboardToggle';
+
 import { checkWin } from './helpers';
 
 function App() {
@@ -14,6 +17,7 @@ function App() {
 
 	const [score, setScore] = useState(0);
 	const [isPlay, setPlay] = useState(true); 							// Set to true if game is playable.
+	const [keyboardSetting, setKeyboard] = useState('classic'); 		// Default keyboard setting: 'classic'. Can toggle to 'qwerty'
 	const [correctLetters, setCorrectLetters] = useState([]);
 	const [wrongLetters, setWrongLetters] = useState([]);
 	const [randWord, setWord] = useState('');
@@ -58,7 +62,7 @@ function App() {
 
 	// Function to provide a hint letter
 	const giveHint = () => {
-		if (remainingHints > 0) {
+		if (isPlay && remainingHints > 0) {
 			let remainingLetters = randWord.split('').filter(c => !correctLetters.includes(c)).join('');
 			let letterHint = remainingLetters.charAt(Math.floor(Math.random() * remainingLetters.length));
 			setSelectedLetter(letterHint);
@@ -112,6 +116,7 @@ function App() {
 						<Hangman wrongLetters={wrongLetters} />
 						<br></br>
 						{/* TEMPORARY DISPLAY ITEMS --- remove before submission */}
+						keyboardSetting: {keyboardSetting}<br></br>
 						random word: {randWord}<br></br>
 						correct letters: {correctLetters}<br></br>
 						wrong letters: {wrongLetters}<br></br>
@@ -124,15 +129,23 @@ function App() {
 					<div className='align-self-center'>
 						<Word word={randWord} correctLetters={correctLetters}></Word>
 
-						<div className='keyboard'>
-							{alphabet.map(letter => (
-								<LetterKey key={letter} isPlay={isPlay} letter={letter} selectedLetter={selectedLetter} word={randWord} correctLetters={correctLetters} setCorrectLetters={setCorrectLetters} wrongLetters={wrongLetters} setWrongLetters={setWrongLetters}/>
-							))}
-						</div>
+						{keyboardSetting === 'qwerty' &&
+							<Keyboard isPlay={isPlay} selectedLetter={selectedLetter} word={randWord} correctLetters={correctLetters} setCorrectLetters={setCorrectLetters} wrongLetters={wrongLetters} setWrongLetters={setWrongLetters}/>
+						}
+						{keyboardSetting === 'classic' &&
+							<div className='keyboard_classic'>
+								{alphabet.map(letter => (
+									<LetterKey key={letter} isPlay={isPlay} letter={letter} selectedLetter={selectedLetter} word={randWord} correctLetters={correctLetters} setCorrectLetters={setCorrectLetters} wrongLetters={wrongLetters} setWrongLetters={setWrongLetters}/>
+								))}
+							</div>
+						}
 
 						<div className='d-flex mt-3'>
 							<div className="mr-auto p-2">
 								<Button content={<i className="fa-solid fa-house"></i>} handleClick={newGame} title="Home"></Button>
+							</div>
+							<div className="mr-auto p-3">
+								<KeyboardToggle keyboardSetting={keyboardSetting} setKeyboard={setKeyboard} />
 							</div>
 							<div className='p-2'>
 								<div className='row'>
