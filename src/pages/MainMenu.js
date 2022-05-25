@@ -6,7 +6,7 @@ function MainMenu() {
   let navigate = useNavigate();
   return (
     <div className="App">
-      <header className="App-header">
+      <header className="fullScreen gameScreen">
         <div className="App-HangMan">
           Hangman 16
         </div>

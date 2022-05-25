@@ -34,16 +34,21 @@
   padding: 0;
   border: none;
   background: none;
+ 
 }
 
 .App-Horizontal {
   padding: 10px;
   margin-top: 20px;
+  position: absolute;
+  width: 50%;
+  left: 25%
 }
 
 .App-Button-How-To-Play {
-  
   background-color: #5991a8;
+  color: #ffffff;
+  font-size: 20px;
   border: none;
   padding: 15px 32px;
   text-align: center;
@@ -51,10 +56,13 @@
   float: left;
   padding: 20px;
   margin: 20px;
+  
 }
 
 .App-Button-About-Us {
   background-color: #115313;
+  color: #ffffff;
+  font-size: 20px;
   border: none;
   padding: 15px 32px;
   text-align: center;
@@ -64,17 +72,6 @@
   margin: 20px;
 }
 
-.App-How-to-play {
-  color: #ffffff;
-  text-align: center;
-  font-size: 20px;
-}
-
-.App-About-us {
-  color: #ffffff;
-  text-align: center;
-  font-size: 20px;
-}
 
 @keyframes App-logo-spin {
   from {
