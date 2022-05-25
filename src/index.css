@@ -44,13 +44,26 @@ code {
 .button {
   background-color: pink;
   border-radius: 10px;
-  margin: auto;
+  margin: 3px;
   padding: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
   transition: all .1s ease-in-out;
 }
+
+.button_flash {
+  animation-duration: 1s;
+  animation-name: flashColour;
+  animation-iteration-count: infinite;
+}
+
+@keyframes flashColour {
+  50% {
+    background-color: blueviolet;
+  }
+}
+
 @media (hover: hover) {	
   .button:hover {
     background-image: linear-gradient(rgba(0, 0, 0, 0.1) 0 0);

@@ -120,17 +120,16 @@ function App() {
 					{/* HANGMAN FIGURE*/}
 					<div className='align-self-center'>
 						<Hangman wrongLetters={wrongLetters} />
-						<Word word={randWord} correctLetters={correctLetters}></Word>
+						<Word word={randWord} correctLetters={correctLetters} gameStatus={gameStatus} ></Word>
 
 						{/* TEMPORARY DISPLAY ITEMS --- remove before submission */}
-						{/* <br></br>
-						keyboardSetting: {keyboardSetting}<br></br>
+						<br></br>
 						random word: {randWord}<br></br>
-						correct letters: {correctLetters}<br></br>
-						wrong letters: {wrongLetters}<br></br>
+						{/* correct letters: {correctLetters}<br></br> */}
+						{/* wrong letters: {wrongLetters}<br></br> */}
 						game status: {gameStatus}<br></br>
 						can we play? {isPlay ? "yes" : "no"}<br/>
-						gameover? {gameOver? "yes":"no"} */}
+						gameover? {gameOver? "yes":"no"}
 					</div>
 
 					{/* KEYBOARD & BUTTONS*/}
@@ -158,7 +157,7 @@ function App() {
 								</div>
 							</div>
 							<div className='p-2'>
-								<Button content={<i className="fa-solid fa-forward"></i>} handleClick={newGame} title="Skip"></Button>
+								<Button content={<i className="fa-solid fa-forward"></i>} handleClick={newGame} title="Next word" triggerFlash={(gameStatus === 'win')}></Button>
 							</div>
 						</div>
 						<div className="mr-auto p-3">
