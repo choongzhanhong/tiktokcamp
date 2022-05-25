@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from "react-router-dom"
 
 import '../App.css';
 import Button from '../components/Button';
@@ -13,6 +14,7 @@ import { checkWin } from '../helpers';
 import Aboutus from '../pages/AboutUs';
 
 function GamePage() {
+    let navigate = useNavigate();
 	const alphabet = Array.from(Array(26)).map((e, i) => i + 65).map((x) => String.fromCharCode(x));
 	const MAX_HINTS = 3;
 
@@ -158,7 +160,11 @@ function GamePage() {
 
 						<div className='d-flex mt-3'>
 							<div className="mr-auto p-2">
-								<Button content={<i className="fa-solid fa-house"></i>} handleClick={newGame} title="Home"></Button>
+								<Button 
+                                    content={<i className="fa-solid fa-house"></i>} 
+                                    title="Home"
+                                    handleClick={() => {navigate("/")}}>   
+                                </Button>
 							</div>
 							<div className='p-2'>
 								<div className='row'>

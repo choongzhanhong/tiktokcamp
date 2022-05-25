@@ -1,6 +1,6 @@
 import '../MainMenu.css';
 import image from '../images/play_button.png';
-import { useNavigate, useParams } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 
 function MainMenu() {
   let navigate = useNavigate();

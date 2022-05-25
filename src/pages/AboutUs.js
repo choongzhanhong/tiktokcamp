@@ -1,7 +1,9 @@
 import React from 'react';
+import { useNavigate } from "react-router-dom"
 import Button from '../components/Button';
 
 function Aboutus() {
+	let navigate = useNavigate();
 	return (
 		<div className="AboutUs">
 			<h1>ABOUT US</h1>
@@ -17,7 +19,12 @@ function Aboutus() {
 			<p>Joan. Engineering Student. Enjoys reading Webtoons</p>
 			
 			<div className='d-flex mt-3 justify-content-around'>
-			<Button icon={<i className="fa-solid fa-house"></i>} content={"Go Home"} title="Home"></Button>
+			<Button 
+				icon={<i className="fa-solid fa-house"></i>} 
+				content={"Go Home"} 
+				title="Home"
+				handleClick={() => {navigate("/")}}>
+			</Button>
 			</div>
 		</div>
 	)
