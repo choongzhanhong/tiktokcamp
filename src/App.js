@@ -17,8 +17,10 @@ function App() {
 	const MAX_HINTS = 3;
 
 	const [score, setScore] = useState(0);
+	const [numGames, setNumGames] = useState(0);
+
 	const [isPlay, setPlay] = useState(true); 							// Set to true if game is playable.
-	const [keyboardSetting, setKeyboard] = useState('qwerty'); 		// Default keyboard setting: 'qwerty'. Can toggle to 'classic'
+	const [keyboardSetting, setKeyboard] = useState('qwerty'); 			// Default keyboard setting: 'qwerty'. Can toggle to 'classic'
 	const [correctLetters, setCorrectLetters] = useState([]);
 	const [wrongLetters, setWrongLetters] = useState([]);
 	const [randWord, setWord] = useState('');
@@ -47,7 +49,6 @@ function App() {
 		})
 		.then((data) => {
 		if (!ignore) {
-			setPlay(true);
 			setWord(data[0].toUpperCase());
 			setCorrectLetters([]);
 			setWrongLetters([]);
@@ -55,6 +56,8 @@ function App() {
 			setNumHints(MAX_HINTS);
 			setStatus('');
 			setGameOver(false);
+			setNumGames(numGames+1);
+			setPlay(true);
 		}
 		});
 
@@ -74,6 +77,7 @@ function App() {
 	// Set up new game (first time)
 	useEffect(() => {
 		newGame();
+		setScore(0);
 	}, []);
 	
 	// Handle keyboard press
@@ -92,9 +96,11 @@ function App() {
 
 	// Check win/lose status at every move
 	useEffect(() => {
-		let stat= checkWin(randWord, correctLetters, wrongLetters);
-		setStatus(stat);
-	}, [randWord, correctLetters, wrongLetters]);
+		if (isPlay) {
+			let stat= checkWin(randWord, correctLetters, wrongLetters);
+			setStatus(stat);
+		}
+	}, [isPlay, randWord, correctLetters, wrongLetters]);
 
 	useEffect(() => {
 		if (gameStatus !== "") {
@@ -102,6 +108,9 @@ function App() {
 		}
 		if (gameStatus === "lose") {
 			setGameOver(true);
+		}
+		if (gameStatus === 'win') {
+			setScore(score+1)
 		}
 	}, [gameStatus]);
 
@@ -125,6 +134,7 @@ function App() {
 						{/* TEMPORARY DISPLAY ITEMS --- remove before submission */}
 						<br></br>
 						random word: {randWord}<br></br>
+						score: {score}/{numGames}<br></br>
 						{/* correct letters: {correctLetters}<br></br> */}
 						{/* wrong letters: {wrongLetters}<br></br> */}
 						game status: {gameStatus}<br></br>
