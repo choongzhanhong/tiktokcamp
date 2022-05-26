@@ -76,8 +76,9 @@ function App() {
 	
 	// Set up new game (first time)
 	useEffect(() => {
-		newGame();
 		setScore(0);
+		setNumGames(0);
+		newGame();
 	}, []);
 	
 	// Handle keyboard press
@@ -110,7 +111,7 @@ function App() {
 			setGameOver(true);
 		}
 		if (gameStatus === 'win') {
-			setScore(score+1)
+			setScore(score+1);
 		}
 	}, [gameStatus]);
 
@@ -130,16 +131,16 @@ function App() {
 					<div className='align-self-center'>
 						<Hangman wrongLetters={wrongLetters} />
 						<Word word={randWord} correctLetters={correctLetters} gameStatus={gameStatus} ></Word>
-
+						
 						{/* TEMPORARY DISPLAY ITEMS --- remove before submission */}
 						<br></br>
 						random word: {randWord}<br></br>
-						score: {score}/{numGames}<br></br>
+						Score: {score}/{numGames}<br></br>
 						{/* correct letters: {correctLetters}<br></br> */}
 						{/* wrong letters: {wrongLetters}<br></br> */}
-						game status: {gameStatus}<br></br>
-						can we play? {isPlay ? "yes" : "no"}<br/>
-						gameover? {gameOver? "yes":"no"}
+						{/* game status: {gameStatus}<br></br> */}
+						{/* can we play? {isPlay ? "yes" : "no"}<br/> */}
+						{/* gameover? {gameOver? "yes":"no"} */}
 					</div>
 
 					{/* KEYBOARD & BUTTONS*/}
