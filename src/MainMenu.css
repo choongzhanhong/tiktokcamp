@@ -14,10 +14,18 @@
 } */
 
 .App-HangMan {
-  font-size: 50px;
-  padding: 20px;
-  
+  font-size: 110px;
+  font-family: "Arial Rounded MT Bold";
+  letter-spacing: 0.02em;
+  text-align: center;
+  color: #F2CA50;
+  text-shadow: -1.8px 1.8px 0 #313335,
+	          1.8px 1.8px 0 #313335,
+	          1.8px -1.8px 0 #313335,
+	          -1.8px -1.8px 0 #313335;
+  padding: 0px;
 }
+
 
 .App-header {
   background-color: #282c34;
@@ -31,10 +39,12 @@
 }
 
 .App-image-button {
+  position: relative;
+  top: 30px;
+  float: center;
   padding: 0;
   border: none;
   background: none;
- 
 }
 
 .App-Horizontal {
@@ -46,32 +56,76 @@
 }
 
 .App-Button-How-To-Play {
-  background-color: #5991a8;
-  color: #ffffff;
-  font-size: 20px;
-  border: none;
-  padding: 15px 32px;
+  position: absolute;
+  top: 60px;
+  left: 80px;
+  background-color: #F2CA50; 
+  font-family: "Arial Rounded MT Bold";
+  border-radius: 20px;
+  border-color: #313335;
+  color: white;
+  width: 200px;
+  height: 100px;
   text-align: center;
-  text-decoration: none;
-  float: left;
-  padding: 20px;
-  margin: 20px;
-  
+  font-size: 27px;
 }
 
 .App-Button-About-Us {
-  background-color: #115313;
-  color: #ffffff;
-  font-size: 20px;
-  border: none;
-  padding: 15px 32px;
+  position: absolute;
+  top: 60px;
+  right: 80px;
+  background-color: #F2CA50; 
+  font-family: "Arial Rounded MT Bold";
+  border-radius: 20px;
+  border-color: #313335;
+  color: white;
+  width: 200px;
+  height: 100px;
   text-align: center;
-  text-decoration: none;
-  float: right;
-  padding: 20px;
-  margin: 20px;
+  font-size: 27px;
 }
 
+.App-Title {
+  font-size: 70px;
+  font-family: "Arial Rounded MT Bold";
+  letter-spacing: 0.02em;
+  text-align: center;
+  color: #F2CA50;
+  text-shadow: -1.5px 1.5px 0 #313335,
+	          1.5px 1.5px 0 #313335,
+	          1.5px -1.5px 0 #313335,
+	          -1.5px -1.5px 0 #313335;
+  padding: 0px;
+}
+
+.App-AboutUsText {
+  font-size: 22px;
+  font-family: "Arial Rounded MT Bold";
+  padding-right: 200px;
+  padding-left: 200px;
+}
+
+.App-TheCreators {
+  font-size: 70px;
+  font-family: "Arial Rounded MT Bold";
+  letter-spacing: 0.02em;
+  text-align: center;
+  color: #F2CA50;
+  padding: 0px;
+}
+
+@media (hover: hover) {	
+  .App-Button-About-Us:hover {
+    background-image: linear-gradient(rgba(206, 204, 158, 0.1) 0 0);
+    transform: scale(1.1);
+  }
+}
+
+@media (hover: hover) {	
+  .App-image-button:hover {
+    transform: scale(1.05);
+  }
+}
 
 @keyframes App-logo-spin {
   from {

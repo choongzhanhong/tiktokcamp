@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  font-family: "Arial Rounded MT Bold", -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -25,7 +25,7 @@ code {
 .gameScreen {
   /* height: 100vh;
   width: 100vw; */
-  background-color: antiquewhite;
+  background-color: #F2F2EB;
 }
 
 .gameElement_row {
@@ -42,7 +42,7 @@ code {
 }
 
 .button {
-  background-color: pink;
+  background-color: #F2CA50;
   border-radius: 10px;
   margin: 3px;
   padding: 10px;
@@ -60,7 +60,7 @@ code {
 
 @keyframes flashColour {
   50% {
-    background-color: blueviolet;
+    background-color: #D9601A;
   }
 }
 
@@ -114,8 +114,8 @@ code {
 }
 
 .keyboard_qwerty > .letterKey {
-  height: 50px;
-  width: 50px;
+  height: 60px;
+  width: 60px;
 }
 
 .gameOverModal {
@@ -128,6 +128,24 @@ code {
   padding: 4em;
 }
 
+.GameOverPage {
+  position:relative;
+  font-family: "Arial Rounded MT Bold";
+}
+
+.GameOverTitle {
+  font-size: 50px;
+}
+
+.GameOverW {
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+}
+
+.d-flex{
+  float: bottom;
+}
 
 
 .scale-down-center {

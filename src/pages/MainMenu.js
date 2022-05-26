@@ -8,7 +8,7 @@ function MainMenu() {
     <div className="App">
       <header className="fullScreen gameScreen">
         <div className="App-HangMan">
-          Hangman 16
+          HANGMAN
         </div>
 
         <button className="App-image-button" onClick={() => {navigate("/gamepage")}}>
