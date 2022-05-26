@@ -137,3 +137,94 @@
     transform: rotate(360deg);
   }
 }
+
+
+/**
+ * ----------------------------------------
+ * TABLET STYLE
+ * ----------------------------------------
+ */
+ @media (max-width: 1024px) {
+  .App{
+    position: absolute;
+  }
+   .App-Horizontal {
+     padding: 10px;
+     margin-top: 20px;
+     position: relative;
+     width: 50%;
+   }
+
+   .App-image-button {
+     position: relative;
+     top: 30px;
+     float: center;
+     padding: 0;
+     border: none;
+     background: none;
+   }
+
+   .App-Button-How-To-Play {
+   position: absolute;
+   width: 100%;
+   height: 100px;
+   top: 40px;
+   transform: translate(-26%, 0%);
+ }
+
+ .App-Button-About-Us {
+   position: absolute;
+   width: 100%;
+   height: 100px;
+   top: 160px;
+   transform: translate(27%, 0%);
+ }
+
+ .App-AboutUsText {
+   font-size: 22px;
+   padding-right: 100px;
+   padding-left: 100px;
+ }
+}
+
+ /**
+* ----------------------------------------
+* MOBILE STYLE
+* ----------------------------------------
+*/
+@media (max-width: 480px) {
+ .App{
+   width:100%;
+   padding-top: 80px;
+ }
+
+ .App-HangMan {
+   font-size: 75px;
+ }
+
+ .App-Title {
+   font-size: 50px;
+ }
+
+ .App-AboutUsText {
+   font-size: 15px;
+   padding-right: 10px;
+   padding-left: 10px;
+ }
+
+ .App-Button-How-To-Play {
+   position: absolute;
+   width: 90%;
+   height: 80px;
+   top: 40px;
+   transform: translate(-33%, 0%);
+ }
+
+ .App-Button-About-Us {
+   position: absolute;
+   width: 90%;
+   height: 80px;
+   top: 140px;
+   transform: translate(34.6%, 0%);
+ }
+}
