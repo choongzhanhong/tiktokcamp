@@ -1,5 +1,8 @@
 .App {
   text-align: center;
+  background-color: #F2F2EB;
+  font-family:"Arial Rounded MT Bold";
+  position: relative;
 }
 
 .App-logo {
@@ -100,7 +103,6 @@
 
 .App-AboutUsText {
   font-size: 22px;
-  font-family: "Arial Rounded MT Bold";
   padding-right: 200px;
   padding-left: 200px;
 }
