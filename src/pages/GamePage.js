@@ -131,17 +131,21 @@ function GamePage() {
 						{/* TEMPORARY DISPLAY ITEMS --- remove before submission */}
 						<br></br>
 						random word: {randWord}<br></br>
-						score: {score}/{numGames}<br></br>
 						{/* correct letters: {correctLetters}<br></br> */}
 						{/* wrong letters: {wrongLetters}<br></br> */}
 						{/* game status: {gameStatus}<br></br> */}
 						{/* can we play? {isPlay ? "yes" : "no"}<br/> */}
 						{/* gameover? {gameOver? "yes":"no"} */}
+						<div className='gameScore'>
+							Score: <b>{score}/{numGames}</b>
+						</div>
 					</div>
 
 					{/* KEYBOARD & BUTTONS*/}
 					<div className='align-self-center'>
-
+						<div className="mr-auto p-3">
+							<KeyboardToggle keyboardSetting={keyboardSetting} setKeyboard={setKeyboard} />
+						</div>
 						{keyboardSetting === 'qwerty' &&
 							<Keyboard isPlay={isPlay} selectedLetter={selectedLetter} word={randWord} correctLetters={correctLetters} setCorrectLetters={setCorrectLetters} wrongLetters={wrongLetters} setWrongLetters={setWrongLetters}/>
 						}
@@ -170,9 +174,6 @@ function GamePage() {
 							<div className='p-2'>
 								<Button content={<i className="fa-solid fa-forward"></i>} handleClick={newGame} title="Next word" triggerFlash={(gameStatus === 'win')}></Button>
 							</div>
-						</div>
-						<div className="mr-auto p-3">
-							<KeyboardToggle keyboardSetting={keyboardSetting} setKeyboard={setKeyboard} />
 						</div>
 					</div>
 				</div>
