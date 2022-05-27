@@ -103,8 +103,8 @@
 
 .App-AboutUsText {
   font-size: 22px;
-  padding-right: 200px;
-  padding-left: 200px;
+  padding-right: 13vw;
+  padding-left: 13vw;
 }
 
 .App-TheCreators {
@@ -146,6 +146,7 @@
  */
  @media (max-width: 1024px) {
   .App{
+    width: 100%;
     position: absolute;
   }
    .App-Horizontal {
