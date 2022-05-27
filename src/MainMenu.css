@@ -58,7 +58,7 @@
 }
 .App-AboutUsText {
 	font-size: 125%;
-	padding: 0 200px;
+	padding: 0 13vw;
 }
 
 .App-TheCreators {
@@ -99,43 +99,17 @@
 * ----------------------------------------
 */
 @media (max-width: 1024px) {
-/* .App-Horizontal {
-padding: 10px;
-margin-top: 20px;
-position: relative;
-width: 50%;
-} */
+.App-Button {
+	width: 40vw;
+	padding: 20px;
+	margin: 10px;
+	font-size: 2em;
+}
 
-/* .App-image-button {
-	position: relative;
-	top: 30px;
-	float: center;
-	padding: 0;
-	border: none;
-	background: none;
-} */
 
-/* .App-Button-How-To-Play {
-position: absolute;
-width: 100%;
-height: 100px;
-top: 40px;
-transform: translate(-26%, 0%);
-} */
-
-/* .App-Button-About-Us {
-position: absolute;
-width: 100%;
-height: 100px;
-top: 160px;
-transform: translate(27%, 0%);
-} */
-
-/* .App-AboutUsText {
-font-size: 22px;
-padding-right: 100px;
-padding-left: 100px;
-} */
+.App-AboutUsText {
+	padding: 0 80px;
+}
 }
 
 /**
