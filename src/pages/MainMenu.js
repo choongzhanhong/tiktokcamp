@@ -1,3 +1,4 @@
+import React from 'react';
 import '../MainMenu.css';
 import image from '../images/play_button.png';
 import { useNavigate } from "react-router-dom"
@@ -12,7 +13,7 @@ function MainMenu() {
         </div>
 
         <button className="App-image-button" onClick={() => {navigate("/gamepage")}}>
-          <img src={image} className="App-logo" alt="my image"/>
+          <img src={image} className="App-logo" alt="Play Button"/>
         </button>
 
         <div className="App-Horizontal">

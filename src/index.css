@@ -31,7 +31,7 @@ code {
 .gameElement_row {
   display: grid;
   align-items: center;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-template-columns: (repeat(auto-fit, minmax(400px, 1fr)));
 }
 
 .figure-container {
@@ -73,7 +73,7 @@ code {
 
 .letter {
   font-size: 30px;
-  border-bottom: 3px solid blue;
+  border-bottom: 3px solid #D9601A;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -85,8 +85,8 @@ code {
 .letterKey {
   background-color: lightgray;
   border-radius: 10px;
-  height: 70px;
-  width: 70px;
+  height: 5vw;
+  width: 5vw;
   margin: auto;
   display: flex;
   align-items: center;
@@ -104,18 +104,18 @@ code {
 .keyboard_classic {
   display: grid;
   align-items: center;
-  grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(6vw, 1fr));
 }
 
 .keyboard_qwerty {
   display: grid;
   align-items: center;
-  grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(5vw, 1fr));
 }
 
 .keyboard_qwerty > .letterKey {
-  height: 60px;
-  width: 60px;
+  height: 5vw;
+  width: 5vw;
 }
 
 .gameOverModal {
@@ -186,21 +186,6 @@ code {
   }
 }
 
-/**
- * ----------------------------------------
- * TABLET STYLE
- * ----------------------------------------
- */
-@media (max-width: 1024px) {
-  .letterKey {
-    height: 65px;
-    width: 65px;
-  }
-
-  .gameElement_row {
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-  }
-}
 
 /**
  * ----------------------------------------
@@ -212,22 +197,22 @@ code {
     padding: 1em;
   }
 
+  .keyboard_classic {
+    grid-template-columns: repeat(auto-fit, minmax(8vw, 1fr));
+  }
+
   .keyboard_qwerty {
-    grid-template-columns: repeat(auto-fit, minmax(30px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(8vw, 1fr));
   }
 
   .keyboard_qwerty > .letterKey {
-    height: 35px;
-    width: 35px;
+    height: 8vw;
+    width: 8vw;
   }
 
   .letterKey {
-    height: 40px;
-    width: 40px;
-  }
-
-  .gameElement_row {
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    height: 8vw;
+    width: 8vw;
   }
   
   .gameOverModal {
