@@ -18,20 +18,21 @@ code {
 
 .fullScreen {
   width: 100%;
-  height: 100vh;
-  padding: 4rem;
-}
-
-.gameScreen {
-  /* height: 100vh;
-  width: 100vw; */
+  min-height: 100vh;
+  height: 100%;
+  padding: 3rem;
   background-color: #F2F2EB;
 }
+
+
+/* ----------------------------------------------
+ *              GAME SCREEN STYLES
+ * ---------------------------------------------- */
 
 .gameElement_row {
   display: grid;
   align-items: center;
-  grid-template-columns: (repeat(auto-fit, minmax(400px, 1fr)));
+  grid-template-columns: repeat(auto-fit, minmax(512px, 1fr));
 }
 
 .figure-container {
@@ -110,12 +111,12 @@ code {
 .keyboard_qwerty {
   display: grid;
   align-items: center;
-  grid-template-columns: repeat(auto-fit, minmax(5vw, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(4vw, 1fr));
 }
 
 .keyboard_qwerty > .letterKey {
-  height: 5vw;
-  width: 5vw;
+  height: 4vw;
+  width: 4vw;
 }
 
 .gameOverModal {
@@ -192,7 +193,7 @@ code {
  * MOBILE STYLE
  * ----------------------------------------
  */
-@media (max-width: 480px) {
+@media (max-width: 1024px) {
   .fullScreen {
     padding: 1em;
   }

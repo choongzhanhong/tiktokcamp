@@ -118,11 +118,11 @@ function GamePage() {
 
 	return (
 		<div className="App">
-			<div className='fullScreen gameScreen'>
+			<div className='fullScreen'>
 				{/*GAME OVER MODAL*/}
 				<GameOver gameOver={gameOver} word={randWord} goHome={newGame} newGame={newGame} />
 
-				<div className='gameElement_row align-self-center'>
+				<div className='gameElement_row'>
 					{/* HANGMAN FIGURE*/}
 					<div className='align-self-center'>
 						<Hangman wrongLetters={wrongLetters} />

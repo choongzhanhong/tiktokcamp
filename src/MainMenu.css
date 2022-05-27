@@ -1,231 +1,167 @@
 .App {
-  text-align: center;
-  background-color: #F2F2EB;
-  font-family:"Arial Rounded MT Bold";
-  position: relative;
+	text-align: center;
+	background-color: #F2F2EB;
+	font-family:"Arial Rounded MT Bold";
+	position: relative;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-/* @media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-} */
 
 .App-HangMan {
-  font-size: 110px;
-  font-family: "Arial Rounded MT Bold";
-  letter-spacing: 0.02em;
-  text-align: center;
-  color: #F2CA50;
-  text-shadow: -1.8px 1.8px 0 #313335,
-	          1.8px 1.8px 0 #313335,
-	          1.8px -1.8px 0 #313335,
-	          -1.8px -1.8px 0 #313335;
-  padding: 0px;
-}
-
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+	font-size: 500%;	
+	text-align: center;
+	color: #F2CA50;
+	text-shadow: -1.8px 1.8px 0 #313335,
+				1.8px 1.8px 0 #313335,
+				1.8px -1.8px 0 #313335,
+				-1.8px -1.8px 0 #313335;
+	padding: 0px;
 }
 
 .App-image-button {
-  position: relative;
-  top: 30px;
-  float: center;
-  padding: 0;
-  border: none;
-  background: none;
-  transform: scale(80%);
+	margin: 10px;
+	float: center;
+	padding: 0;
+	border: none;
+	background: none;
 }
 
 .App-Horizontal {
-  padding: 10px;
-  margin-top: 20px;
-  position: absolute;
-  width: 50%;
-  left: 25%
+	display: grid;
+	align-items: center;
+	grid-template-columns: 1fr 1fr;
+	padding: 10px;
 }
 
-.App-Button-How-To-Play {
-  position: absolute;
-  top: 60px;
-  left: 80px;
-  background-color: #F2CA50; 
-  font-family: "Arial Rounded MT Bold";
-  border-radius: 20px;
-  border-color: #313335;
-  color: white;
-  width: 200px;
-  height: 100px;
-  text-align: center;
-  font-size: 27px;
-}
-
-.App-Button-About-Us {
-  position: absolute;
-  top: 60px;
-  right: 80px;
-  background-color: #F2CA50; 
-  font-family: "Arial Rounded MT Bold";
-  border-radius: 20px;
-  border-color: #313335;
-  color: white;
-  width: 200px;
-  height: 100px;
-  text-align: center;
-  font-size: 27px;
+.App-Button {
+	background-color: #F2CA50; 
+	font-family: "Arial Rounded MT Bold";
+	border-radius: 20px;
+	border-color: #313335;
+	color: white;
+	width: 25vw;
+	padding: 20px;
+	margin: 10px;
+	text-align: center;
+	font-size: 2em;
 }
 
 .App-Title {
-  font-size: 70px;
-  font-family: "Arial Rounded MT Bold";
-  letter-spacing: 0.02em;
-  text-align: center;
-  color: #F2CA50;
-  text-shadow: -1.5px 1.5px 0 #313335,
-	          1.5px 1.5px 0 #313335,
-	          1.5px -1.5px 0 #313335,
-	          -1.5px -1.5px 0 #313335;
-  padding: 0px;
+	font-size: 300%;
+	font-family: "Arial Rounded MT Bold";
+	letter-spacing: 0.02em;
+	text-align: center;
+	color: #F2CA50;
+	text-shadow: -1.5px 1.5px 0 #313335,
+				1.5px 1.5px 0 #313335,
+				1.5px -1.5px 0 #313335,
+				-1.5px -1.5px 0 #313335;
+	padding: 0px;
 }
-
 .App-AboutUsText {
-  font-size: 22px;
-  padding-right: 200px;
-  padding-left: 200px;
+	font-size: 125%;
+	padding: 0 200px;
 }
 
 .App-TheCreators {
-  font-size: 70px;
-  font-family: "Arial Rounded MT Bold";
-  letter-spacing: 0.02em;
-  text-align: center;
-  color: #F2CA50;
-  padding: 0px;
+	font-size: 300%;
+	font-family: "Arial Rounded MT Bold";
+	letter-spacing: 0.02em;
+	text-align: center;
+	color: #F2CA50;
+	padding: 0px;
 }
 
 @media (hover: hover) {	
-  .App-Button-About-Us:hover {
-    background-image: linear-gradient(rgba(206, 204, 158, 0.1) 0 0);
-    transform: scale(1.1);
-  }
+.App-Button:hover {
+	background-image: linear-gradient(rgba(206, 204, 158, 0.1) 0 0);
+	transform: scale(1.1);
+}
 }
 
 @media (hover: hover) {	
-  .App-image-button:hover {
-    transform: scale(1.05);
-  }
+.App-image-button:hover {
+	transform: scale(1.05);
+}
 }
 
 @keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+	from {
+	transform: rotate(0deg);
+	}
+	to {
+	transform: rotate(360deg);
+}
 }
 
 
 /**
- * ----------------------------------------
- * TABLET STYLE
- * ----------------------------------------
- */
- @media (max-width: 1024px) {
-  .App{
-    position: absolute;
-  }
-   .App-Horizontal {
-     padding: 10px;
-     margin-top: 20px;
-     position: relative;
-     width: 50%;
-   }
+* ----------------------------------------
+* TABLET STYLE
+* ----------------------------------------
+*/
+@media (max-width: 1024px) {
+/* .App-Horizontal {
+padding: 10px;
+margin-top: 20px;
+position: relative;
+width: 50%;
+} */
 
-   .App-image-button {
-     position: relative;
-     top: 30px;
-     float: center;
-     padding: 0;
-     border: none;
-     background: none;
-   }
+/* .App-image-button {
+	position: relative;
+	top: 30px;
+	float: center;
+	padding: 0;
+	border: none;
+	background: none;
+} */
 
-   .App-Button-How-To-Play {
-   position: absolute;
-   width: 100%;
-   height: 100px;
-   top: 40px;
-   transform: translate(-26%, 0%);
- }
+/* .App-Button-How-To-Play {
+position: absolute;
+width: 100%;
+height: 100px;
+top: 40px;
+transform: translate(-26%, 0%);
+} */
 
- .App-Button-About-Us {
-   position: absolute;
-   width: 100%;
-   height: 100px;
-   top: 160px;
-   transform: translate(27%, 0%);
- }
+/* .App-Button-About-Us {
+position: absolute;
+width: 100%;
+height: 100px;
+top: 160px;
+transform: translate(27%, 0%);
+} */
 
- .App-AboutUsText {
-   font-size: 22px;
-   padding-right: 100px;
-   padding-left: 100px;
- }
+/* .App-AboutUsText {
+font-size: 22px;
+padding-right: 100px;
+padding-left: 100px;
+} */
 }
 
- /**
+/**
 * ----------------------------------------
 * MOBILE STYLE
 * ----------------------------------------
 */
 @media (max-width: 480px) {
- .App{
-   width:100%;
-   padding-top: 80px;
- }
+	.App{
+		width:100%;
+		padding-top: 80px;
+	}
 
- .App-HangMan {
-   font-size: 75px;
- }
+	.App-HangMan {
+		font-size: 400%;
+	}
 
- .App-Title {
-   font-size: 50px;
- }
+	.App-AboutUsText {
+		font-size: 15px;
+		padding: 0 10px;
+	}
 
- .App-AboutUsText {
-   font-size: 15px;
-   padding-right: 10px;
-   padding-left: 10px;
- }
-
- .App-Button-How-To-Play {
-   position: absolute;
-   width: 90%;
-   height: 80px;
-   top: 40px;
-   transform: translate(-33%, 0%);
- }
-
- .App-Button-About-Us {
-   position: absolute;
-   width: 90%;
-   height: 80px;
-   top: 140px;
-   transform: translate(34.6%, 0%);
- }
+	.App-Button {
+		width: 40vw;
+		padding: 10px;
+		margin: 10px;
+		font-size: 1.5em;
+	}
 }

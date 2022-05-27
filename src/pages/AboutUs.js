@@ -7,7 +7,7 @@ function Aboutus() {
 	let navigate = useNavigate();
 	return (
 		<div className="App">
-			<header className="fullScreen gameScreen">
+			<div className="fullScreen">
 				<div className="App-Title">
 					ABOUT US
 				</div>
@@ -42,7 +42,7 @@ function Aboutus() {
 					handleClick={() => {navigate("/")}}>
 				</Button>
 				</div>
-			</header>
+			</div>
 		</div>
 	)
 }
