@@ -1,7 +1,7 @@
 .App {
 	text-align: center;
 	background-color: #F2F2EB;
-	font-family:"Arial Rounded MT Bold";
+	font-family: "Arial Rounded MT Bold", "Calibri", "Helvetica", "Verdana", "Monaco",  sans-serif;
 	position: relative;
 }
 
@@ -33,7 +33,7 @@
 
 .App-Button {
 	background-color: #F2CA50; 
-	font-family: "Arial Rounded MT Bold";
+	/* font-family: "Arial Rounded MT Bold"; */
 	border-radius: 20px;
 	border-color: #313335;
 	color: white;
@@ -46,7 +46,7 @@
 
 .App-Title {
 	font-size: 300%;
-	font-family: "Arial Rounded MT Bold";
+	/* font-family: "Arial Rounded MT Bold"; */
 	letter-spacing: 0.02em;
 	text-align: center;
 	color: #F2CA50;
@@ -63,7 +63,7 @@
 
 .App-TheCreators {
 	font-size: 300%;
-	font-family: "Arial Rounded MT Bold";
+	/* font-family: "Arial Rounded MT Bold"; */
 	letter-spacing: 0.02em;
 	text-align: center;
 	color: #F2CA50;

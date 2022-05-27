@@ -1,8 +1,6 @@
 body {
   margin: 0;
-  font-family: "Arial Rounded MT Bold", -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: "Arial Rounded MT Bold", "Calibri", "Helvetica", "Verdana", "Monaco",  sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -131,7 +129,7 @@ code {
 
 .GameOverPage {
   position:relative;
-  font-family: "Arial Rounded MT Bold";
+  /* font-family: "Arial Rounded MT Bold"; */
 }
 
 .GameOverTitle {
