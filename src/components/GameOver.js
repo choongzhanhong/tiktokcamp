@@ -3,7 +3,7 @@ import Button from './Button';
 import ReactModal from 'react-modal'; //npm install react-modal
 import { useNavigate } from "react-router-dom"
 
-const GameOver = ({gameOver, word, goHome, newGame}) => {
+const GameOver = ({gameOver, word, newGame}) => {
     let navigate = useNavigate();
     return (
         <ReactModal isOpen={gameOver} className="gameOverModal">
