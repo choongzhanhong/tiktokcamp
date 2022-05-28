@@ -19,7 +19,7 @@ function Aboutus() {
 					THE CREATORS
 				</div>
 				<div className="App-AboutUsText">
-					Zhan Hong. Communication Student. (fun fact)
+					Zhan Hong. Communication Student. Likes to lift heavy things!
 				</div>
 				<div className="App-AboutUsText">
 					Johannine. Computer Engineering Student. Sells stickers @omatian.
