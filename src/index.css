@@ -1,5 +1,4 @@
 body {
-  margin: 0;
   font-family: "Arial Rounded MT Bold", "Calibri", "Helvetica", "Verdana", "Monaco",  sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -20,8 +19,6 @@ code {
   min-height: 100vh;
   height: 100%;
   padding: 3rem;
-  background-color: #F2F2EB;
-  overflow: scroll;
 }
 
 
@@ -32,7 +29,7 @@ code {
 .gameElement_row {
   display: grid;
   align-items: center;
-  grid-template-columns: repeat(auto-fit, minmax(512px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
 }
 
 .figure-container {
@@ -124,10 +121,10 @@ code {
   border-radius: 10px;
   margin: 3px;
   padding: 10px;
+  width: fit-content;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 25%;
   margin: auto;
 }
 
@@ -210,6 +207,16 @@ code {
     padding: 1em;
   }
 
+  .letter {
+    font-size: 1em;
+    height: 50px;
+    width: 15px;
+  }
+  
+  .gameElement_row {
+    grid-template-columns: repeat(auto-fit, minmax(95vw, 1fr));
+  }
+
   .keyboard_classic {
     grid-template-columns: repeat(auto-fit, minmax(8vw, 1fr));
   }
@@ -241,7 +248,7 @@ code {
  * MOBILE STYLE
  * ----------------------------------------
  */
-@media (max-width: 1024px) {
+@media (max-width: 480px) {
   .fullScreen {
     padding: 0.5em;
   }
