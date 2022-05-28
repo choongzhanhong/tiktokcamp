@@ -25,7 +25,7 @@ function Aboutus() {
 					Johannine. Computer Engineering Student. Sells stickers @omatian.
 				</div>
 				<div className="App-AboutUsText">
-					Justin. Computer Science Student. (fun fact)
+					Justin. Computer Science Student. Enjoys watching/playing tennis!
 				</div>
 				<div className="App-AboutUsText">
 					Yi Ting. Data Science Student. Likes all space things.
