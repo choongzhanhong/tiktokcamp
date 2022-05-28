@@ -128,14 +128,8 @@ function GamePage() {
 						<Hangman wrongLetters={wrongLetters} />
 						<Word word={randWord} correctLetters={correctLetters} gameStatus={gameStatus} ></Word>
 
-						{/* TEMPORARY DISPLAY ITEMS --- remove before submission */}
 						<br></br>
-						random word: {randWord}<br></br>
-						{/* correct letters: {correctLetters}<br></br> */}
-						{/* wrong letters: {wrongLetters}<br></br> */}
-						{/* game status: {gameStatus}<br></br> */}
-						{/* can we play? {isPlay ? "yes" : "no"}<br/> */}
-						{/* gameover? {gameOver? "yes":"no"} */}
+						{/* random word: {randWord}<br></br> */}
 						<div className='gameScore'>
 							Score: <b>{score}/{numGames}</b>
 						</div>

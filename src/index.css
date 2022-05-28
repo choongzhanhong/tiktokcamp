@@ -15,11 +15,13 @@ code {
 }
 
 .fullScreen {
+  min-width: 100vw;
   width: 100%;
   min-height: 100vh;
   height: 100%;
   padding: 3rem;
   background-color: #F2F2EB;
+  overflow: scroll;
 }
 
 
@@ -200,7 +202,7 @@ code {
 
 /**
  * ----------------------------------------
- * MOBILE STYLE
+ * TABLET STYLE
  * ----------------------------------------
  */
 @media (max-width: 1024px) {
@@ -224,6 +226,42 @@ code {
   .letterKey {
     height: 8vw;
     width: 8vw;
+  }
+  
+  .gameOverModal {
+    width: 80%;
+    height: 80%;
+    transform: translate(12%, 12%);
+    text-align: center;
+    padding: 4em;
+  }
+}
+/**
+ * ----------------------------------------
+ * MOBILE STYLE
+ * ----------------------------------------
+ */
+@media (max-width: 1024px) {
+  .fullScreen {
+    padding: 0.5em;
+  }
+
+  .keyboard_classic {
+    grid-template-columns: repeat(auto-fit, minmax(6vw, 1fr));
+  }
+
+  .keyboard_qwerty {
+    grid-template-columns: repeat(auto-fit, minmax(6vw, 1fr));
+  }
+
+  .keyboard_qwerty > .letterKey {
+    height: 8vw;
+    width: 6vw;
+  }
+
+  .letterKey {
+    height: 8vw;
+    width: 6vw;
   }
   
   .gameOverModal {
