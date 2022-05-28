@@ -14,7 +14,7 @@ code {
 }
 
 .fullScreen {
-  min-width: 100vw;
+  /* min-width: 100vw; */
   width: 100%;
   min-height: 100vh;
   height: 100%;

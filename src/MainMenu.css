@@ -93,6 +93,13 @@
 }
 }
 
+.instructionImage {
+	width: 50vw;
+	border: 5px solid #313335;
+	margin: 10px;
+	box-sizing: border-box;
+}
+
 
 /**
 * ----------------------------------------
@@ -110,6 +117,10 @@
 
 .App-AboutUsText {
 	padding: 0 80px;
+}
+
+.instructionImage {
+	width: 90vw;
 }
 }
 

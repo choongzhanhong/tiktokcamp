@@ -12,12 +12,12 @@ function MainMenu() {
           HANGMAN
         </h1>
 
-        <button className="App-image-button" onClick={() => {navigate("/gamepage")}}>
+        <button className="App-image-button" onClick={() => {navigate("/game")}}>
           <img src={image} className="App-logo" alt="Play Button"/>
         </button>
 
         <div className="App-Horizontal d-flex justify-content-center">
-            <button className="App-Button" onClick={() => {navigate("/")}}>
+            <button className="App-Button" onClick={() => {navigate("/instructions")}}>
               How to play
             </button>
             <button className="App-Button" onClick={() => {navigate("/aboutus")}}>
