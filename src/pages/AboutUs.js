@@ -19,19 +19,19 @@ function Aboutus() {
 					THE CREATORS
 				</div>
 				<div className="App-AboutUsText">
-					Zhan Hong. Communication Student. Likes to lift heavy things!
+					Zhan Hong [Communications and New Media] <i class="fa-solid fa-dumbbell"></i> Likes to lift heavy things!
 				</div>
 				<div className="App-AboutUsText">
-					Johannine. Computer Engineering Student. Sells stickers @omatian.
+					Johannine [Computer Engineering] <i class="fa-solid fa-cart-plus"></i> Sells stickers <a href='https://omatian.sg' target='_blank'>@omatian</a>. 
 				</div>
 				<div className="App-AboutUsText">
-					Justin. Computer Science Student. (fun fact)
+					Justin [Computer Science] 
 				</div>
 				<div className="App-AboutUsText">
-					Yi Ting. Data Science Student. Likes all space things.
+					Yi Ting [Data Science] <i class="fa-solid fa-rocket"></i> Likes all space things.
 				</div>
 				<div className="App-AboutUsText">
-					Joan. Engineering Student. Enjoys reading Webtoons
+					Joan [Engineering] <i class="fa-solid fa-book-open-reader"></i> Enjoys reading Webtoons.
 				</div>
 				<br></br>
 				<div className='d-flex mt-3 justify-content-around'>
