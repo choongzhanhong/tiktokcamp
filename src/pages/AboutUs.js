@@ -25,7 +25,7 @@ function Aboutus() {
 					Johannine [Computer Engineering] <i class="fa-solid fa-cart-plus"></i> Sells stickers <a href='https://omatian.sg' target='_blank'>@omatian</a>. 
 				</div>
 				<div className="App-AboutUsText">
-					Justin [Computer Science] 
+					Justin [Computer Science] <i class="fa-solid fa-baseball"></i> Enjoys watching/playing tennis!
 				</div>
 				<div className="App-AboutUsText">
 					Yi Ting [Data Science] <i class="fa-solid fa-rocket"></i> Likes all space things.
