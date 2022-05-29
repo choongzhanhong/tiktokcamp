@@ -22,7 +22,7 @@ function Aboutus() {
 					Zhan Hong [Communications and New Media] <i class="fa-solid fa-dumbbell"></i> Likes to lift heavy things!
 				</div>
 				<div className="App-AboutUsText">
-					Johannine [Computer Engineering] <i class="fa-solid fa-cart-plus"></i> Sells stickers <a href='https://omatian.sg' target='_blank'>@omatian</a>. 
+					Johannine [Computer Engineering] <i class="fa-solid fa-cart-plus"></i> Sells stickers <a href='https://omatian.sg' target='_blank' rel="noopener noreferrer" >@omatian</a>. 
 				</div>
 				<div className="App-AboutUsText">
 					Justin [Computer Science] <i class="fa-solid fa-baseball"></i> Enjoys watching/playing tennis!
